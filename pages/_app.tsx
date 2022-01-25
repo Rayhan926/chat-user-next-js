@@ -1,8 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import '../styles/globals.scss';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }) {
+    return (
+        <main className='min-h-screen flex justify-center items-center bg-gray-100'>
+            <Component {...pageProps} />
+        </main>
+    );
 }
 
-export default MyApp
+export default MyApp;

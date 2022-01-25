@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@183;300;400;500;600;700;744;800;900&display=swap');
+
+* {
+    @apply selection:bg-primary-500 selection:text-white;
+}
+body,
+html {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.chat_p_x {
+    @apply px-3;
+}
+
+._svg_spinner {
+    animation: rotate 2s linear infinite;
+}
+
+._svg_spinner .path {
+    animation: dash 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
+}
+
+._tw_checkbox {
+    & + div div {
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+
+    & + div div.default {
+        display: block;
+    }
+    &:checked + div {
+        div {
+            display: none;
+        }
+        .checked {
+            display: block;
+        }
+    }
+    &:indeterminate + div {
+        div {
+            display: none;
+        }
+        .indeterminate {
+            display: block;
+        }
+    }
+}
